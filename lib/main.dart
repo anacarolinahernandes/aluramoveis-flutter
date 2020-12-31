@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       },
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
+      theme: new ThemeData(
         primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -84,8 +84,18 @@ class Home extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: CustomAppBar(title: 'Lojinha Alura'),
-      body: GridProducts(
-        furnitures: furnitures,
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Text('Produtos'),
+          ),
+          Flexible(
+            child: GridProducts(
+              furnitures: furnitures,
+            ),
+          ),
+        ],
       ),
     );
   }

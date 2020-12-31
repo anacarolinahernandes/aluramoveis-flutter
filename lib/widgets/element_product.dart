@@ -66,7 +66,12 @@ class Title extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       bottom: 10,
-      child: Text(title),
+      child: Text(
+        title,
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }

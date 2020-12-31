@@ -7,15 +7,6 @@ class GridProducts extends StatelessWidget {
 
   GridProducts({this.furnitures});
 
-  // List<String> nomes = [
-  //   'Jon Snow',
-  //   'Sansa Stark',
-  //   'Arya Stark',
-  //   'Robb Stark',
-  //   'Bran Stark',
-  //   'Eddard "Ned" Stark'
-  // ];
-
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -31,20 +22,5 @@ class GridProducts extends StatelessWidget {
         );
       },
     );
-
-    //   return Scaffold(
-    //       body: GridView.builder(
-    //     padding: const EdgeInsets.all(20),
-    //     gridDelegate:
-    //         SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-    //     itemCount: nomes.length,
-    //     itemBuilder: (BuildContext context, int index) {
-    //       return Container(
-    //           padding: EdgeInsets.all(8),
-    //           margin: EdgeInsets.all(8),
-    //           child: Text(nomes[index]),
-    //           color: Colors.teal[(index + 1) * 100]);
-    //     },
-    //   ));
   }
 }
