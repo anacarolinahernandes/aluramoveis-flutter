@@ -49,7 +49,7 @@ class Gradient extends StatelessWidget {
           end: Alignment.bottomCenter,
           colors: [
             Colors.transparent,
-            Color.fromRGBO(178, 155, 178, 1),
+            Theme.of(context).primaryColor,
           ],
         ),
       ),
@@ -68,9 +68,7 @@ class Title extends StatelessWidget {
       bottom: 10,
       child: Text(
         title,
-        style: TextStyle(
-          color: Colors.white,
-        ),
+        style: Theme.of(context).textTheme.headline3,
       ),
     );
   }

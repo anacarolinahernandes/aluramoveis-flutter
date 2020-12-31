@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:aluramoveis/color_swatch.dart';
 import 'package:aluramoveis/pages/cart.dart';
-import 'package:aluramoveis/pages/details.dart';
 import 'package:aluramoveis/widgets/custom_appbar.dart';
 import 'package:aluramoveis/widgets/grid_products.dart';
 
@@ -18,8 +18,24 @@ class MyApp extends StatelessWidget {
       },
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: new ThemeData(
-        primarySwatch: Colors.red,
+      theme: ThemeData(
+        fontFamily: 'Alata',
+        primarySwatch: NewColorSwatch().lilac,
+        textTheme: TextTheme(
+          headline1: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+          headline2: TextStyle(
+            fontSize: 18,
+            color: Colors.black,
+          ),
+          headline3: TextStyle(
+            fontSize: 16,
+            color: Colors.white,
+          ),
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Home(),
@@ -34,7 +50,7 @@ class Home extends StatelessWidget {
       "price": 300,
       "image": "movel1.jpeg",
       "description":
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam libero id mauris mollis convallis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam libero id mauris mollis convallis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam libero id mauris mollis convallis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
     },
     {
       "title": "Cadeira",
@@ -88,7 +104,10 @@ class Home extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(16),
-            child: Text('Produtos'),
+            child: Text(
+              'Produtos',
+              style: Theme.of(context).textTheme.headline2,
+            ),
           ),
           Flexible(
             child: GridProducts(
