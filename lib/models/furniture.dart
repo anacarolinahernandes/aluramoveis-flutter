@@ -2,7 +2,7 @@ class Furniture {
   String title;
   String image;
   String description;
-  int price;
+  double price;
 
   Furniture({
     this.title,
