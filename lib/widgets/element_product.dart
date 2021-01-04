@@ -68,7 +68,7 @@ class Title extends StatelessWidget {
       bottom: 10,
       child: Text(
         title,
-        style: Theme.of(context).textTheme.headline3,
+        style: Theme.of(context).textTheme.headline4,
       ),
     );
   }

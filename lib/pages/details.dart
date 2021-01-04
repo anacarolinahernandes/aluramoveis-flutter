@@ -7,16 +7,13 @@ class Details extends StatefulWidget {
   final Furniture furniture;
   const Details({this.furniture});
 
+  @override
   _DetailsState createState() => _DetailsState();
 }
 
 class _DetailsState extends State<Details> {
   void initState() {
     super.initState();
-  }
-
-  update() {
-    setState(() {});
   }
 
   @override
@@ -45,5 +42,9 @@ class _DetailsState extends State<Details> {
         ),
       ),
     );
+  }
+
+  update() {
+    setState(() {});
   }
 }

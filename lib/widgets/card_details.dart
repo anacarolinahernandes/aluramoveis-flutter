@@ -44,7 +44,8 @@ class CardDetails extends StatelessWidget {
                 FlatButton(
                   color: Theme.of(context).primaryColor,
                   onPressed: () {
-                    _addItemToCart(
+                    _verifyListItem(
+                      Home.itensCart,
                       ItemCart(
                         quantity: 1,
                         furniture: furniture,
@@ -66,8 +67,19 @@ class CardDetails extends StatelessWidget {
     );
   }
 
-  _addItemToCart(ItemCart item) {
+  void _addItemToCart(item) {
     Home.itensCart.add(item);
     updatePage();
+  }
+
+  void _verifyListItem(List<ItemCart> list, ItemCart item) {
+    int indexFurniture = list.indexWhere((item) => item.furniture == furniture);
+
+    // se o índice for encontrado, ele retorna 0, se não, retorna -1
+    if (indexFurniture >= 0) {
+      list[indexFurniture].quantity++;
+    } else {
+      _addItemToCart(item);
+    }
   }
 }
