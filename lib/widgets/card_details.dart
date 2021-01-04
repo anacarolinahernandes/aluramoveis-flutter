@@ -1,12 +1,15 @@
+import 'package:aluramoveis/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:aluramoveis/models/furniture.dart';
+import 'package:aluramoveis/models/item_cart.dart';
 
 class CardDetails extends StatelessWidget {
   final formatPrice = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
   final Furniture furniture;
+  final Function updatePage;
 
-  CardDetails({this.furniture});
+  CardDetails({this.furniture, this.updatePage});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +43,14 @@ class CardDetails extends StatelessWidget {
                 ),
                 FlatButton(
                   color: Theme.of(context).primaryColor,
-                  onPressed: () {},
+                  onPressed: () {
+                    _addItemToCart(
+                      ItemCart(
+                        quantity: 1,
+                        furniture: furniture,
+                      ),
+                    );
+                  },
                   child: Text(
                     'Comprar',
                     style: TextStyle(
@@ -54,5 +64,10 @@ class CardDetails extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _addItemToCart(ItemCart item) {
+    Home.itensCart.add(item);
+    updatePage();
   }
 }

@@ -1,5 +1,5 @@
-import 'package:aluramoveis/widgets/car_button.dart';
 import 'package:flutter/material.dart';
+import 'package:aluramoveis/widgets/cart_button.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
@@ -25,7 +25,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       elevation: 0.0,
       centerTitle: true,
       actions: <Widget>[
-        showCarIcon ? CarButton() : Container(),
+        showCarIcon ? CartButton() : Container(),
       ],
     );
   }
