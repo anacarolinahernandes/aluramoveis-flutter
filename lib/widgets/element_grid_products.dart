@@ -3,11 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:aluramoveis/models/furniture.dart';
 import 'package:aluramoveis/widgets/element_product.dart';
 
-class ElementGridProducts extends StatelessWidget {
+class ElementGridProducts extends StatefulWidget {
   final Furniture furniture;
+  final Function update;
 
-  const ElementGridProducts({this.furniture});
+  const ElementGridProducts({this.furniture, this.update});
 
+  @override
+  _ElementGridProductsState createState() => _ElementGridProductsState();
+}
+
+class _ElementGridProductsState extends State<ElementGridProducts> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -16,7 +22,7 @@ class ElementGridProducts extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) => Details(
-                    furniture: furniture,
+                    furniture: widget.furniture,
                   )),
         );
       },
@@ -34,8 +40,8 @@ class ElementGridProducts extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: ElementProduct(
-            image: furniture.image,
-            title: furniture.title,
+            image: widget.furniture.image,
+            title: widget.furniture.title,
           ),
         ),
       ),

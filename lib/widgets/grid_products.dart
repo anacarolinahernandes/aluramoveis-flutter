@@ -4,8 +4,9 @@ import 'package:aluramoveis/widgets/element_grid_products.dart';
 
 class GridProducts extends StatelessWidget {
   final furnitures;
+  final Function update;
 
-  GridProducts({this.furnitures});
+  GridProducts({this.furnitures, this.update});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +20,7 @@ class GridProducts extends StatelessWidget {
 
         return ElementGridProducts(
           furniture: furniture,
+          update: update,
         );
       },
     );

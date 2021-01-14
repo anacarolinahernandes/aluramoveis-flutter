@@ -4,9 +4,14 @@ import 'package:aluramoveis/models/item_cart.dart';
 import 'package:aluramoveis/widgets/custom_appbar.dart';
 import 'package:aluramoveis/widgets/grid_products.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   static List<ItemCart> itensCart = List();
 
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +29,15 @@ class Home extends StatelessWidget {
           Flexible(
             child: GridProducts(
               furnitures: furnitures,
+              update: update,
             ),
           ),
         ],
       ),
     );
+  }
+
+  void update() {
+    setState(() {});
   }
 }
