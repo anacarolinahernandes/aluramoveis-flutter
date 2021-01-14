@@ -1,5 +1,5 @@
-import 'package:aluramoveis/pages/home.dart';
 import 'package:flutter/material.dart';
+import 'package:aluramoveis/pages/home.dart';
 
 class CartButton extends StatefulWidget {
   @override

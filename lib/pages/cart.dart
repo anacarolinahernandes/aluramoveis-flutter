@@ -11,36 +11,35 @@ class Cart extends StatefulWidget {
 
 class _CartState extends State<Cart> {
   final formatPrice = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
+
   @override
   Widget build(BuildContext context) {
     double totalValue = _calculate();
-
     return Scaffold(
-      backgroundColor: Colors.grey[200],
-      appBar: CustomAppBar(
-        title: 'Carrinho',
-        showCarIcon: false,
-      ),
-      body: _constructScreen(),
-      bottomNavigationBar: Container(
-        color: Colors.white,
-        padding: EdgeInsets.fromLTRB(32, 32, 32, 48),
-        height: 120,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Text(
-              'Total',
-              style: Theme.of(context).textTheme.headline2,
-            ),
-            Text(
-              formatPrice.format(totalValue),
-              style: Theme.of(context).textTheme.headline3,
-            ),
-          ],
+        backgroundColor: Colors.grey[200],
+        appBar: CustomAppBar(
+          title: 'Carrinho',
+          showCarIcon: false,
         ),
-      ),
-    );
+        body: _constructScreen(),
+        bottomNavigationBar: Container(
+          color: Colors.white,
+          padding: EdgeInsets.fromLTRB(32, 32, 32, 48),
+          height: 120,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                'Total',
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              Text(
+                formatPrice.format(totalValue),
+                style: Theme.of(context).textTheme.headline3,
+              ),
+            ],
+          ),
+        ));
   }
 
   void update() {
